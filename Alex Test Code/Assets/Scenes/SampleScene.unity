@@ -856,6 +856,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5376eecb1945314c978bd92951655fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DiaphragmEntered: 0
+  Time: 0
+  Waited: 0
+  MyMiniState: {fileID: 590531404}
 --- !u!4 &372604146 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2c36abc33390b92449426ff73782686d,
@@ -1215,6 +1219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 590531402}
   - component: {fileID: 590531403}
+  - component: {fileID: 590531404}
   m_Layer: 0
   m_Name: Anterior Lung Sound 1
   m_TagString: Untagged
@@ -1261,6 +1266,21 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   endstate: 0
+--- !u!114 &590531404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590531401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0d9d72490aab8e45ac3233c29ddf12a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenCount: 0
+  ListenPoints:
+  - {fileID: 357978393}
 --- !u!4 &657871524 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a13e648b0150e0b42b496f90757836ac,

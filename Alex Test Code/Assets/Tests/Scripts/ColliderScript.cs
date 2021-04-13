@@ -6,8 +6,8 @@ public class ColliderScript : MonoBehaviour
 {
     public bool DiaphragmEntered = false;
     public int Time = 0;
-
     public bool Waited = false;
+    public MiniState MyMiniState;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -36,16 +36,17 @@ public class ColliderScript : MonoBehaviour
 
     public void OnTimeMet()
     {
-        //deactivate gameobject
         Debug.Log("Timer Complete");
+        MyMiniState.IndexCount();
+        this.gameObject.SetActive(false);
     }
 
     IEnumerator CountToFive()
     {
         yield return new WaitForSeconds(1);
-        Waited = true;
-        
+        Waited = true; 
     }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Diaphragm")
@@ -54,7 +55,8 @@ public class ColliderScript : MonoBehaviour
             StopAllCoroutines();
             Time = 0;
             Waited = false;
-
         }
     }
+
+
 }
