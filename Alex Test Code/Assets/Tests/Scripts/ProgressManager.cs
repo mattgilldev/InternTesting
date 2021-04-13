@@ -15,6 +15,10 @@ public class ProgressManager : MonoBehaviour
     public bool startexperience = false;
 
     public int numberofstates = 0;
+    [Header("Audio Systems")]
+    public AudioSource Narration;
+    public AudioSource Soundeffects;
+    public bool audioplayed = false;
 
     private void Start()
     {
@@ -30,6 +34,8 @@ public class ProgressManager : MonoBehaviour
             StartExperience();
         }
     }
+
+
 
     public void StartExperience()
     {
@@ -102,4 +108,32 @@ public class ProgressManager : MonoBehaviour
             states = null;
         }
     }
+
+    public void PlayNarration()
+    {
+        Narration.time = currentState.audioclip_starttime;
+        Narration.Play();
+    }
+
+    public void CheckAudioTimeEnd()
+    {
+        if (Narration.isPlaying)
+        {
+            if (Narration.time >= currentState.audioclip_endtime)
+            {
+                EndNarration();
+            }
+        }
+    }
+
+    public void EndNarration()
+    {
+        if (currentState._Notasktodo == false)
+        {
+            //
+        }
+        // if true.... go to next state post a 1-2 second delay
+    }
+
+    //need to loop the audio here if the task is not completed
 }

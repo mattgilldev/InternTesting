@@ -21,10 +21,13 @@ public class StateClass : MonoBehaviour
     public float audioclip_endtime = 0f;
     [Tooltip("There is no task for the user in this step, only playing the audio for instruction...so if this is true, then once the audio is done playing, go to the next state.,. false = there is a task the user needs to do")]
     public bool _Notasktodo = false;
+    [Tooltip("time to wait before repeating audio if desired")]
+    public float DelayTime;
     [Tooltip("anything to trigger on start of the state")]
     public UnityEvent Events_on_start;
-    [Tooltip("anything to trigger on end (completing the state")]
+    [Tooltip("anything to trigger on end (completing the state)")]
     public UnityEvent Events_on_end;
+
 
     [Header("for testing only")]
     public bool endstate = false;
