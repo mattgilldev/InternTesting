@@ -130,9 +130,20 @@ public class ProgressManager : MonoBehaviour
     {
         if (currentState._Notasktodo == false)
         {
-            //
+            Debug.Log("Audio done... but waiting for event to trigger end of state");
+        }
+
+        if (currentState._Notasktodo)
+        {
+            StartCoroutine(TimeDelay(1));
         }
         // if true.... go to next state post a 1-2 second delay
+    }
+
+    public IEnumerator TimeDelay(int delaytime)
+    {
+        yield return new WaitForSeconds(delaytime);
+        currentState.EndThisState();
     }
 
     //need to loop the audio here if the task is not completed
