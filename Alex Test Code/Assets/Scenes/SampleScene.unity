@@ -133,6 +133,9 @@ GameObject:
   - component: {fileID: 2043117}
   - component: {fileID: 2043116}
   - component: {fileID: 2043115}
+  - component: {fileID: 2043120}
+  - component: {fileID: 2043119}
+  - component: {fileID: 2043118}
   m_Layer: 0
   m_Name: Anterior Sound 5
   m_TagString: Untagged
@@ -215,6 +218,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043113}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &2043118
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043113}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 2.0000002, z: 1.0000002}
+  m_Center: {x: 0.00000005960465, y: 0, z: -0.00000008940697}
+--- !u!54 &2043119
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043113}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &2043120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5376eecb1945314c978bd92951655fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DiaphragmEntered: 0
+  Time: 0
+  Waited: 0
+  MyMiniState: {fileID: 590531404}
 --- !u!1 &16362280
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,8 +347,9 @@ GameObject:
   m_Component:
   - component: {fileID: 71015225}
   - component: {fileID: 71015226}
+  - component: {fileID: 71015227}
   m_Layer: 0
-  m_Name: Aortic Valve Position
+  m_Name: Heart Listening Positions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -318,7 +367,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1816053105}
-  m_RootOrder: 23
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &71015226
 MonoBehaviour:
@@ -332,7 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3e7e880685f2744ac64d266d305871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statename: Aortic Valve Position
+  statename: Heart Listening Positions
   Gobjs_turnon: []
   _audioclip: 0
   audioclip_starttime: 0
@@ -346,63 +395,26 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   endstate: 0
---- !u!1 &77983437
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 77983438}
-  - component: {fileID: 77983439}
-  m_Layer: 0
-  m_Name: Posterior Sound 7
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &77983438
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 77983437}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1816053105}
-  m_RootOrder: 18
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &77983439
+--- !u!114 &71015227
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 77983437}
+  m_GameObject: {fileID: 71015224}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e3e7e880685f2744ac64d266d305871, type: 3}
+  m_Script: {fileID: 11500000, guid: a0d9d72490aab8e45ac3233c29ddf12a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statename: Posterior Sound 7
-  Gobjs_turnon: []
-  _audioclip: 0
-  audioclip_starttime: 0
-  audioclip_endtime: 0
-  _Notasktodo: 0
-  DelayTime: 0
-  Events_on_start:
-    m_PersistentCalls:
-      m_Calls: []
-  Events_on_end:
-    m_PersistentCalls:
-      m_Calls: []
-  endstate: 0
+  MyState: {fileID: 0}
+  ListenCount: 0
+  ListenPoints:
+  - {fileID: 1492893443}
+  - {fileID: 91770414}
+  - {fileID: 1251828233}
+  - {fileID: 869619163}
+  - {fileID: 857877507}
 --- !u!1 &91770407
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,6 +427,9 @@ GameObject:
   - component: {fileID: 91770411}
   - component: {fileID: 91770410}
   - component: {fileID: 91770409}
+  - component: {fileID: 91770414}
+  - component: {fileID: 91770413}
+  - component: {fileID: 91770412}
   m_Layer: 0
   m_Name: Mitral Valve Spot
   m_TagString: Untagged
@@ -496,69 +511,57 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 91770407}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &91770412
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91770407}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0.0000019073486, y: 0, z: 0}
+--- !u!54 &91770413
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91770407}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &91770414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91770407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5376eecb1945314c978bd92951655fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DiaphragmEntered: 0
+  Time: 0
+  Waited: 0
+  MyMiniState: {fileID: 71015227}
 --- !u!4 &154832418 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 729d63727ce146c4298536719bc7759a,
     type: 3}
   m_PrefabInstance: {fileID: 850809883}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &183961426
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 183961427}
-  - component: {fileID: 183961428}
-  m_Layer: 0
-  m_Name: Anterior Lung Sound 6
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &183961427
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 183961426}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1816053105}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &183961428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 183961426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e3e7e880685f2744ac64d266d305871, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statename: Anterior Lung Sound 6
-  Gobjs_turnon: []
-  _audioclip: 0
-  audioclip_starttime: 0
-  audioclip_endtime: 0
-  _Notasktodo: 0
-  DelayTime: 0
-  Events_on_start:
-    m_PersistentCalls:
-      m_Calls: []
-  Events_on_end:
-    m_PersistentCalls:
-      m_Calls: []
-  endstate: 0
 --- !u!1 &194328868
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,120 +760,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 261087372}
   m_CullTransparentMesh: 0
---- !u!1 &304285555
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 304285556}
-  - component: {fileID: 304285557}
-  m_Layer: 0
-  m_Name: Posterior Sound 6
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &304285556
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 304285555}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1816053105}
-  m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &304285557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 304285555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e3e7e880685f2744ac64d266d305871, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statename: Posterior Sound 6
-  Gobjs_turnon: []
-  _audioclip: 0
-  audioclip_starttime: 0
-  audioclip_endtime: 0
-  _Notasktodo: 0
-  DelayTime: 0
-  Events_on_start:
-    m_PersistentCalls:
-      m_Calls: []
-  Events_on_end:
-    m_PersistentCalls:
-      m_Calls: []
-  endstate: 0
---- !u!1 &346036673
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 346036674}
-  - component: {fileID: 346036675}
-  m_Layer: 0
-  m_Name: Anterior Lung Sound 4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &346036674
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 346036673}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1816053105}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &346036675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 346036673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e3e7e880685f2744ac64d266d305871, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statename: Anterior Lung Sound 4
-  Gobjs_turnon: []
-  _audioclip: 0
-  audioclip_starttime: 0
-  audioclip_endtime: 0
-  _Notasktodo: 0
-  DelayTime: 0
-  Events_on_start:
-    m_PersistentCalls:
-      m_Calls: []
-  Events_on_end:
-    m_PersistentCalls:
-      m_Calls: []
-  endstate: 0
 --- !u!1 &357978386
 GameObject:
   m_ObjectHideFlags: 0
@@ -992,7 +881,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 357978386}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.0000001, y: 4.0171723, z: 1.0000001}
@@ -1093,63 +982,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1905733032}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &383275445
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 383275446}
-  - component: {fileID: 383275447}
-  m_Layer: 0
-  m_Name: Tricuspid Valve Position
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &383275446
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 383275445}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1816053105}
-  m_RootOrder: 26
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &383275447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 383275445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e3e7e880685f2744ac64d266d305871, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statename: Tricuspid Valve Position
-  Gobjs_turnon: []
-  _audioclip: 0
-  audioclip_starttime: 0
-  audioclip_endtime: 0
-  _Notasktodo: 0
-  DelayTime: 0
-  Events_on_start:
-    m_PersistentCalls:
-      m_Calls: []
-  Events_on_end:
-    m_PersistentCalls:
-      m_Calls: []
-  endstate: 0
 --- !u!1 &428293037
 GameObject:
   m_ObjectHideFlags: 0
@@ -1393,120 +1225,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 949739645}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &473437279
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 473437280}
-  - component: {fileID: 473437281}
-  m_Layer: 0
-  m_Name: Pulmonic Valve Position
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &473437280
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 473437279}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1816053105}
-  m_RootOrder: 24
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &473437281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 473437279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e3e7e880685f2744ac64d266d305871, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statename: Pulmonic Valve Position
-  Gobjs_turnon: []
-  _audioclip: 0
-  audioclip_starttime: 0
-  audioclip_endtime: 0
-  _Notasktodo: 0
-  DelayTime: 0
-  Events_on_start:
-    m_PersistentCalls:
-      m_Calls: []
-  Events_on_end:
-    m_PersistentCalls:
-      m_Calls: []
-  endstate: 0
---- !u!1 &479047248
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 479047249}
-  - component: {fileID: 479047250}
-  m_Layer: 0
-  m_Name: Anterior Lung Sound 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &479047249
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 479047248}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1816053105}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &479047250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 479047248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e3e7e880685f2744ac64d266d305871, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statename: Anterior Lung Sound 2
-  Gobjs_turnon: []
-  _audioclip: 0
-  audioclip_starttime: 0
-  audioclip_endtime: 0
-  _Notasktodo: 0
-  DelayTime: 0
-  Events_on_start:
-    m_PersistentCalls:
-      m_Calls: []
-  Events_on_end:
-    m_PersistentCalls:
-      m_Calls: []
-  endstate: 0
 --- !u!4 &479659525 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1d4142c9c108ae544985a5eb8662e4e2,
@@ -1613,7 +1331,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1816053105}
-  m_RootOrder: 28
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &572109914
 MonoBehaviour:
@@ -1715,69 +1433,17 @@ MonoBehaviour:
   ListenCount: 0
   ListenPoints:
   - {fileID: 357978393}
+  - {fileID: 1817976388}
+  - {fileID: 964555749}
+  - {fileID: 797946155}
+  - {fileID: 2043120}
+  - {fileID: 1629135447}
 --- !u!4 &657871524 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a13e648b0150e0b42b496f90757836ac,
     type: 3}
   m_PrefabInstance: {fileID: 772613111}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &660702886
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 660702887}
-  - component: {fileID: 660702888}
-  m_Layer: 0
-  m_Name: Posterior Sound 4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &660702887
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 660702886}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1816053105}
-  m_RootOrder: 15
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &660702888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 660702886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e3e7e880685f2744ac64d266d305871, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statename: Posterior Sound 4
-  Gobjs_turnon: []
-  _audioclip: 0
-  audioclip_starttime: 0
-  audioclip_endtime: 0
-  _Notasktodo: 0
-  DelayTime: 0
-  Events_on_start:
-    m_PersistentCalls:
-      m_Calls: []
-  Events_on_end:
-    m_PersistentCalls:
-      m_Calls: []
-  endstate: 0
 --- !u!1001 &672673586
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2117,63 +1783,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -45, y: -45, z: 0}
---- !u!1 &731939570
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 731939571}
-  - component: {fileID: 731939572}
-  m_Layer: 0
-  m_Name: Posterior Sound 8
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &731939571
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 731939570}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1816053105}
-  m_RootOrder: 19
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &731939572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 731939570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e3e7e880685f2744ac64d266d305871, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statename: Posterior Sound 8
-  Gobjs_turnon: []
-  _audioclip: 0
-  audioclip_starttime: 0
-  audioclip_endtime: 0
-  _Notasktodo: 0
-  DelayTime: 0
-  Events_on_start:
-    m_PersistentCalls:
-      m_Calls: []
-  Events_on_end:
-    m_PersistentCalls:
-      m_Calls: []
-  endstate: 0
 --- !u!1 &740111428
 GameObject:
   m_ObjectHideFlags: 0
@@ -2508,8 +2117,9 @@ GameObject:
   m_Component:
   - component: {fileID: 776122174}
   - component: {fileID: 776122175}
+  - component: {fileID: 776122176}
   m_Layer: 0
-  m_Name: Posterior Sound 1
+  m_Name: Posterior Sound Acquisition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2527,7 +2137,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1816053105}
-  m_RootOrder: 12
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &776122175
 MonoBehaviour:
@@ -2541,7 +2151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3e7e880685f2744ac64d266d305871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statename: Posterior Sound 1
+  statename: Posterior Sound Acquisition
   Gobjs_turnon: []
   _audioclip: 0
   audioclip_starttime: 0
@@ -2555,6 +2165,29 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   endstate: 0
+--- !u!114 &776122176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776122173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0d9d72490aab8e45ac3233c29ddf12a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyState: {fileID: 0}
+  ListenCount: 0
+  ListenPoints:
+  - {fileID: 1637758062}
+  - {fileID: 936829326}
+  - {fileID: 2029693425}
+  - {fileID: 1428735312}
+  - {fileID: 1849374230}
+  - {fileID: 1432767631}
+  - {fileID: 1534145352}
+  - {fileID: 1514593587}
 --- !u!1 &797946148
 GameObject:
   m_ObjectHideFlags: 0
@@ -2567,6 +2200,9 @@ GameObject:
   - component: {fileID: 797946152}
   - component: {fileID: 797946151}
   - component: {fileID: 797946150}
+  - component: {fileID: 797946155}
+  - component: {fileID: 797946154}
+  - component: {fileID: 797946153}
   m_Layer: 0
   m_Name: Anterior Sound 4
   m_TagString: Untagged
@@ -2649,6 +2285,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797946148}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &797946153
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797946148}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.9999999, z: 1.0000002}
+  m_Center: {x: 0.00000005960464, y: 0, z: -0.00000008940697}
+--- !u!54 &797946154
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797946148}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &797946155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797946148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5376eecb1945314c978bd92951655fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DiaphragmEntered: 0
+  Time: 0
+  Waited: 0
+  MyMiniState: {fileID: 590531404}
 --- !u!1 &804471389
 GameObject:
   m_ObjectHideFlags: 0
@@ -2712,79 +2393,22 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
   Events_on_end:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 748540363}
-        m_MethodName: 
-        m_Mode: 1
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  endstate: 0
---- !u!1 &846550829
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 846550830}
-  - component: {fileID: 846550831}
-  m_Layer: 0
-  m_Name: Anterior Lung Sound 5
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &846550830
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 846550829}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1816053105}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &846550831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 846550829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e3e7e880685f2744ac64d266d305871, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statename: Anterior Lung Sound 5
-  Gobjs_turnon: []
-  _audioclip: 0
-  audioclip_starttime: 0
-  audioclip_endtime: 0
-  _Notasktodo: 0
-  DelayTime: 0
-  Events_on_start:
-    m_PersistentCalls:
-      m_Calls: []
-  Events_on_end:
-    m_PersistentCalls:
-      m_Calls: []
   endstate: 0
 --- !u!1001 &850809883
 PrefabInstance:
@@ -2887,6 +2511,9 @@ GameObject:
   - component: {fileID: 857877504}
   - component: {fileID: 857877503}
   - component: {fileID: 857877502}
+  - component: {fileID: 857877507}
+  - component: {fileID: 857877506}
+  - component: {fileID: 857877505}
   m_Layer: 0
   m_Name: Pulmonic Valve Point
   m_TagString: Untagged
@@ -2968,6 +2595,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 857877500}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &857877505
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857877500}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0.0000019073486, y: -0.0000038146973, z: 0}
+--- !u!54 &857877506
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857877500}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &857877507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857877500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5376eecb1945314c978bd92951655fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DiaphragmEntered: 0
+  Time: 0
+  Waited: 0
+  MyMiniState: {fileID: 71015227}
 --- !u!1 &869619156
 GameObject:
   m_ObjectHideFlags: 0
@@ -2980,6 +2652,9 @@ GameObject:
   - component: {fileID: 869619160}
   - component: {fileID: 869619159}
   - component: {fileID: 869619158}
+  - component: {fileID: 869619163}
+  - component: {fileID: 869619162}
+  - component: {fileID: 869619161}
   m_Layer: 0
   m_Name: Erbs Point
   m_TagString: Untagged
@@ -3061,6 +2736,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 869619156}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &869619161
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869619156}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0.000005722046, y: -0.0000038146973, z: 0}
+--- !u!54 &869619162
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869619156}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &869619163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869619156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5376eecb1945314c978bd92951655fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DiaphragmEntered: 0
+  Time: 0
+  Waited: 0
+  MyMiniState: {fileID: 71015227}
 --- !u!1 &899350392
 GameObject:
   m_ObjectHideFlags: 0
@@ -3221,6 +2941,9 @@ GameObject:
   - component: {fileID: 936829324}
   - component: {fileID: 936829323}
   - component: {fileID: 936829322}
+  - component: {fileID: 936829327}
+  - component: {fileID: 936829326}
+  - component: {fileID: 936829325}
   m_Layer: 0
   m_Name: Posterior Sound 2
   m_TagString: Untagged
@@ -3303,6 +3026,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 936829320}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &936829325
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936829320}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &936829326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936829320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5376eecb1945314c978bd92951655fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DiaphragmEntered: 0
+  Time: 0
+  Waited: 0
+  MyMiniState: {fileID: 776122176}
+--- !u!65 &936829327
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936829320}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 2.0000002, z: 1.0000002}
+  m_Center: {x: 0.00000005960465, y: 0, z: -0.00000008940697}
 --- !u!1001 &949739645
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3467,6 +3235,9 @@ GameObject:
   - component: {fileID: 964555746}
   - component: {fileID: 964555745}
   - component: {fileID: 964555744}
+  - component: {fileID: 964555749}
+  - component: {fileID: 964555748}
+  - component: {fileID: 964555747}
   m_Layer: 0
   m_Name: Anterior Sound 3
   m_TagString: Untagged
@@ -3549,6 +3320,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 964555742}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &964555747
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964555742}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.9999999, z: 1.0000002}
+  m_Center: {x: 0.00000005960464, y: 0, z: -0.00000008940697}
+--- !u!54 &964555748
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964555742}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &964555749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964555742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5376eecb1945314c978bd92951655fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DiaphragmEntered: 0
+  Time: 0
+  Waited: 0
+  MyMiniState: {fileID: 590531404}
 --- !u!1 &1064367330
 GameObject:
   m_ObjectHideFlags: 0
@@ -3792,6 +3608,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1120585076}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1120585078 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8ebca99f9763bca449d6e1fc7db7c160,
+    type: 3}
+  m_PrefabInstance: {fileID: 1120585076}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1120585079
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120585078}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.32335925, y: 0.34000003, z: 0.90960014}
+  m_Center: {x: -0.000000007450581, y: 0, z: -0.32930005}
 --- !u!1 &1121980951
 GameObject:
   m_ObjectHideFlags: 0
@@ -4233,6 +4068,9 @@ GameObject:
   - component: {fileID: 1251828230}
   - component: {fileID: 1251828229}
   - component: {fileID: 1251828228}
+  - component: {fileID: 1251828233}
+  - component: {fileID: 1251828232}
+  - component: {fileID: 1251828231}
   m_Layer: 0
   m_Name: Tricuspid Valve Spot
   m_TagString: Untagged
@@ -4314,120 +4152,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251828226}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1291913829
-GameObject:
+--- !u!65 &1251828231
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1291913830}
-  - component: {fileID: 1291913831}
-  m_Layer: 0
-  m_Name: Posterior Sound 5
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1291913830
-Transform:
+  m_GameObject: {fileID: 1251828226}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1251828232
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1291913829}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1816053105}
-  m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1291913831
+  m_GameObject: {fileID: 1251828226}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1251828233
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1291913829}
+  m_GameObject: {fileID: 1251828226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e3e7e880685f2744ac64d266d305871, type: 3}
+  m_Script: {fileID: 11500000, guid: d5376eecb1945314c978bd92951655fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statename: Posterior Sound 5
-  Gobjs_turnon: []
-  _audioclip: 0
-  audioclip_starttime: 0
-  audioclip_endtime: 0
-  _Notasktodo: 0
-  DelayTime: 0
-  Events_on_start:
-    m_PersistentCalls:
-      m_Calls: []
-  Events_on_end:
-    m_PersistentCalls:
-      m_Calls: []
-  endstate: 0
---- !u!1 &1320967890
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1320967891}
-  - component: {fileID: 1320967892}
-  m_Layer: 0
-  m_Name: Posterior Sound 3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1320967891
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1320967890}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1816053105}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1320967892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1320967890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e3e7e880685f2744ac64d266d305871, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statename: Posterior Sound 3
-  Gobjs_turnon: []
-  _audioclip: 0
-  audioclip_starttime: 0
-  audioclip_endtime: 0
-  _Notasktodo: 0
-  DelayTime: 0
-  Events_on_start:
-    m_PersistentCalls:
-      m_Calls: []
-  Events_on_end:
-    m_PersistentCalls:
-      m_Calls: []
-  endstate: 0
+  DiaphragmEntered: 0
+  Time: 0
+  Waited: 0
+  MyMiniState: {fileID: 71015227}
 --- !u!1 &1328086363
 GameObject:
   m_ObjectHideFlags: 0
@@ -4457,7 +4226,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1816053105}
-  m_RootOrder: 20
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1328086365
 MonoBehaviour:
@@ -4559,63 +4328,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1334508441}
   m_CullTransparentMesh: 0
---- !u!1 &1344461374
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1344461375}
-  - component: {fileID: 1344461376}
-  m_Layer: 0
-  m_Name: Posterior Sound 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1344461375
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1344461374}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1816053105}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1344461376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1344461374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e3e7e880685f2744ac64d266d305871, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statename: Posterior Sound 2
-  Gobjs_turnon: []
-  _audioclip: 0
-  audioclip_starttime: 0
-  audioclip_endtime: 0
-  _Notasktodo: 0
-  DelayTime: 0
-  Events_on_start:
-    m_PersistentCalls:
-      m_Calls: []
-  Events_on_end:
-    m_PersistentCalls:
-      m_Calls: []
-  endstate: 0
 --- !u!1 &1354109552
 GameObject:
   m_ObjectHideFlags: 0
@@ -4720,8 +4432,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1354109552}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.753, y: 1.476, z: -0.83927464}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: 0.499, y: 1.476, z: -0.83927464}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -4828,29 +4540,13 @@ MonoBehaviour:
   - {fileID: 1636020471}
   - {fileID: 1694097347}
   - {fileID: 590531403}
-  - {fileID: 479047250}
-  - {fileID: 1422529785}
-  - {fileID: 346036675}
-  - {fileID: 846550831}
-  - {fileID: 183961428}
   - {fileID: 1650333916}
   - {fileID: 2055380159}
   - {fileID: 776122175}
-  - {fileID: 1344461376}
-  - {fileID: 1320967892}
-  - {fileID: 660702888}
-  - {fileID: 1291913831}
-  - {fileID: 304285557}
-  - {fileID: 77983439}
-  - {fileID: 731939572}
   - {fileID: 1328086365}
   - {fileID: 1772655713}
   - {fileID: 1573510586}
   - {fileID: 71015226}
-  - {fileID: 473437281}
-  - {fileID: 1428515659}
-  - {fileID: 383275447}
-  - {fileID: 2036486908}
   - {fileID: 572109914}
   currentState: {fileID: 0}
   lastState: {fileID: 0}
@@ -4874,120 +4570,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1422529783
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1422529784}
-  - component: {fileID: 1422529785}
-  m_Layer: 0
-  m_Name: Anterior Lung Sound 3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1422529784
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1422529783}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1816053105}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1422529785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1422529783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e3e7e880685f2744ac64d266d305871, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statename: Anterior Lung Sound 3
-  Gobjs_turnon: []
-  _audioclip: 0
-  audioclip_starttime: 0
-  audioclip_endtime: 0
-  _Notasktodo: 0
-  DelayTime: 0
-  Events_on_start:
-    m_PersistentCalls:
-      m_Calls: []
-  Events_on_end:
-    m_PersistentCalls:
-      m_Calls: []
-  endstate: 0
---- !u!1 &1428515657
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1428515658}
-  - component: {fileID: 1428515659}
-  m_Layer: 0
-  m_Name: Erbs Point Position
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1428515658
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1428515657}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1816053105}
-  m_RootOrder: 25
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1428515659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1428515657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e3e7e880685f2744ac64d266d305871, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statename: Erbs Point Position
-  Gobjs_turnon: []
-  _audioclip: 0
-  audioclip_starttime: 0
-  audioclip_endtime: 0
-  _Notasktodo: 0
-  DelayTime: 0
-  Events_on_start:
-    m_PersistentCalls:
-      m_Calls: []
-  Events_on_end:
-    m_PersistentCalls:
-      m_Calls: []
-  endstate: 0
 --- !u!1 &1428735306
 GameObject:
   m_ObjectHideFlags: 0
@@ -5000,6 +4582,9 @@ GameObject:
   - component: {fileID: 1428735310}
   - component: {fileID: 1428735309}
   - component: {fileID: 1428735308}
+  - component: {fileID: 1428735313}
+  - component: {fileID: 1428735312}
+  - component: {fileID: 1428735311}
   m_Layer: 0
   m_Name: Posterior Sound 4
   m_TagString: Untagged
@@ -5082,6 +4667,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1428735306}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1428735311
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428735306}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1428735312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428735306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5376eecb1945314c978bd92951655fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DiaphragmEntered: 0
+  Time: 0
+  Waited: 0
+  MyMiniState: {fileID: 776122176}
+--- !u!65 &1428735313
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428735306}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 2.0000002, z: 1.0000002}
+  m_Center: {x: 0.000000059604645, y: 1.7763568e-15, z: -0.00000008940697}
 --- !u!1 &1432767625
 GameObject:
   m_ObjectHideFlags: 0
@@ -5094,6 +4724,9 @@ GameObject:
   - component: {fileID: 1432767629}
   - component: {fileID: 1432767628}
   - component: {fileID: 1432767627}
+  - component: {fileID: 1432767632}
+  - component: {fileID: 1432767631}
+  - component: {fileID: 1432767630}
   m_Layer: 0
   m_Name: Posterior Sound 6
   m_TagString: Untagged
@@ -5176,6 +4809,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1432767625}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1432767630
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432767625}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1432767631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432767625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5376eecb1945314c978bd92951655fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DiaphragmEntered: 0
+  Time: 0
+  Waited: 0
+  MyMiniState: {fileID: 776122176}
+--- !u!65 &1432767632
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432767625}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000004, y: 2.0000007, z: 1.0000001}
+  m_Center: {x: 0.00000005960466, y: 8.969649e-15, z: -0.00000008940696}
 --- !u!1 &1460769374
 GameObject:
   m_ObjectHideFlags: 0
@@ -5280,6 +4958,9 @@ GameObject:
   - component: {fileID: 1492893440}
   - component: {fileID: 1492893439}
   - component: {fileID: 1492893438}
+  - component: {fileID: 1492893443}
+  - component: {fileID: 1492893442}
+  - component: {fileID: 1492893441}
   m_Layer: 0
   m_Name: Aortic Valve Point
   m_TagString: Untagged
@@ -5361,6 +5042,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1492893436}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1492893441
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492893436}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: -0.0000038146973, z: 0}
+--- !u!54 &1492893442
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492893436}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1492893443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492893436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5376eecb1945314c978bd92951655fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DiaphragmEntered: 0
+  Time: 0
+  Waited: 0
+  MyMiniState: {fileID: 71015227}
 --- !u!1 &1514593581
 GameObject:
   m_ObjectHideFlags: 0
@@ -5373,6 +5099,9 @@ GameObject:
   - component: {fileID: 1514593585}
   - component: {fileID: 1514593584}
   - component: {fileID: 1514593583}
+  - component: {fileID: 1514593588}
+  - component: {fileID: 1514593587}
+  - component: {fileID: 1514593586}
   m_Layer: 0
   m_Name: Posterior Sound 8
   m_TagString: Untagged
@@ -5455,6 +5184,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514593581}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1514593586
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514593581}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1514593587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514593581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5376eecb1945314c978bd92951655fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DiaphragmEntered: 0
+  Time: 0
+  Waited: 0
+  MyMiniState: {fileID: 776122176}
+--- !u!65 &1514593588
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514593581}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 2.0000002, z: 1.0000001}
+  m_Center: {x: 0.000000059604645, y: -1.5543122e-14, z: -0.00000008940696}
 --- !u!1 &1534145346
 GameObject:
   m_ObjectHideFlags: 0
@@ -5467,6 +5241,9 @@ GameObject:
   - component: {fileID: 1534145350}
   - component: {fileID: 1534145349}
   - component: {fileID: 1534145348}
+  - component: {fileID: 1534145353}
+  - component: {fileID: 1534145352}
+  - component: {fileID: 1534145351}
   m_Layer: 0
   m_Name: Posterior Sound 7
   m_TagString: Untagged
@@ -5549,6 +5326,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534145346}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1534145351
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534145346}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1534145352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534145346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5376eecb1945314c978bd92951655fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DiaphragmEntered: 0
+  Time: 0
+  Waited: 0
+  MyMiniState: {fileID: 776122176}
+--- !u!65 &1534145353
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534145346}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 2.0000002, z: 1.0000002}
+  m_Center: {x: 0.00000005960465, y: 0, z: -0.00000008940697}
 --- !u!1001 &1555971009
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5644,6 +5466,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1555971009}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1555971011 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8ebca99f9763bca449d6e1fc7db7c160,
+    type: 3}
+  m_PrefabInstance: {fileID: 1555971009}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1573510584
 GameObject:
   m_ObjectHideFlags: 0
@@ -5673,7 +5501,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1816053105}
-  m_RootOrder: 22
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1573510586
 MonoBehaviour:
@@ -5713,6 +5541,9 @@ GameObject:
   - component: {fileID: 1629135444}
   - component: {fileID: 1629135443}
   - component: {fileID: 1629135442}
+  - component: {fileID: 1629135447}
+  - component: {fileID: 1629135446}
+  - component: {fileID: 1629135445}
   m_Layer: 0
   m_Name: Anterior Sound 6
   m_TagString: Untagged
@@ -5795,6 +5626,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629135440}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1629135445
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629135440}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 2.0000002, z: 1.0000002}
+  m_Center: {x: 0.00000005960465, y: 0, z: -0.00000008940697}
+--- !u!54 &1629135446
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629135440}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1629135447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629135440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5376eecb1945314c978bd92951655fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DiaphragmEntered: 0
+  Time: 0
+  Waited: 0
+  MyMiniState: {fileID: 590531404}
 --- !u!1 &1636020469
 GameObject:
   m_ObjectHideFlags: 0
@@ -5848,10 +5724,32 @@ MonoBehaviour:
   DelayTime: 0
   Events_on_start:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1555971011}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   Events_on_end:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1555971011}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   endstate: 0
 --- !u!1 &1637758056
 GameObject:
@@ -5865,6 +5763,9 @@ GameObject:
   - component: {fileID: 1637758060}
   - component: {fileID: 1637758059}
   - component: {fileID: 1637758058}
+  - component: {fileID: 1637758063}
+  - component: {fileID: 1637758062}
+  - component: {fileID: 1637758061}
   m_Layer: 0
   m_Name: Posterior Sound 1
   m_TagString: Untagged
@@ -5947,6 +5848,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1637758056}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1637758061
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637758056}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1637758062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637758056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5376eecb1945314c978bd92951655fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DiaphragmEntered: 0
+  Time: 0
+  Waited: 0
+  MyMiniState: {fileID: 776122176}
+--- !u!65 &1637758063
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637758056}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 2.0000002, z: 1.0000002}
+  m_Center: {x: 0.00000005960465, y: 0, z: -0.00000008940697}
 --- !u!1001 &1649480839
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6066,7 +6012,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1816053105}
-  m_RootOrder: 10
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1650333916
 MonoBehaviour:
@@ -6216,7 +6162,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1816053105}
-  m_RootOrder: 21
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1772655713
 MonoBehaviour:
@@ -6356,29 +6302,13 @@ Transform:
   - {fileID: 1636020470}
   - {fileID: 1694097346}
   - {fileID: 590531402}
-  - {fileID: 479047249}
-  - {fileID: 1422529784}
-  - {fileID: 346036674}
-  - {fileID: 846550830}
-  - {fileID: 183961427}
   - {fileID: 1650333915}
   - {fileID: 2055380158}
   - {fileID: 776122174}
-  - {fileID: 1344461375}
-  - {fileID: 1320967891}
-  - {fileID: 660702887}
-  - {fileID: 1291913830}
-  - {fileID: 304285556}
-  - {fileID: 77983438}
-  - {fileID: 731939571}
   - {fileID: 1328086364}
   - {fileID: 1772655712}
   - {fileID: 1573510585}
   - {fileID: 71015225}
-  - {fileID: 473437280}
-  - {fileID: 1428515658}
-  - {fileID: 383275446}
-  - {fileID: 2036486907}
   - {fileID: 572109913}
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -6395,6 +6325,9 @@ GameObject:
   - component: {fileID: 1817976385}
   - component: {fileID: 1817976384}
   - component: {fileID: 1817976383}
+  - component: {fileID: 1817976388}
+  - component: {fileID: 1817976387}
+  - component: {fileID: 1817976386}
   m_Layer: 0
   m_Name: Anterior Sound 2
   m_TagString: Untagged
@@ -6477,6 +6410,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1817976381}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1817976386
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817976381}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 2.0000005, z: 1.0000001}
+  m_Center: {x: -0.000001847744, y: -0.000015258789, z: -0.00000008940696}
+--- !u!54 &1817976387
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817976381}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1817976388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817976381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5376eecb1945314c978bd92951655fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DiaphragmEntered: 0
+  Time: 0
+  Waited: 0
+  MyMiniState: {fileID: 590531404}
 --- !u!1 &1849374224
 GameObject:
   m_ObjectHideFlags: 0
@@ -6489,6 +6467,9 @@ GameObject:
   - component: {fileID: 1849374228}
   - component: {fileID: 1849374227}
   - component: {fileID: 1849374226}
+  - component: {fileID: 1849374231}
+  - component: {fileID: 1849374230}
+  - component: {fileID: 1849374229}
   m_Layer: 0
   m_Name: Posterior Sound 5
   m_TagString: Untagged
@@ -6571,6 +6552,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1849374224}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1849374229
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849374224}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1849374230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849374224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5376eecb1945314c978bd92951655fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DiaphragmEntered: 0
+  Time: 0
+  Waited: 0
+  MyMiniState: {fileID: 776122176}
+--- !u!65 &1849374231
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849374224}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 2.0000005, z: 1.0000001}
+  m_Center: {x: 0.000000059604645, y: -2.1316282e-14, z: -0.00000008940696}
 --- !u!1 &1850764399
 GameObject:
   m_ObjectHideFlags: 0
@@ -7371,6 +7397,9 @@ GameObject:
   - component: {fileID: 2029693423}
   - component: {fileID: 2029693422}
   - component: {fileID: 2029693421}
+  - component: {fileID: 2029693426}
+  - component: {fileID: 2029693425}
+  - component: {fileID: 2029693424}
   m_Layer: 0
   m_Name: Posterior Sound 3
   m_TagString: Untagged
@@ -7453,63 +7482,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2029693419}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &2036486906
-GameObject:
+--- !u!54 &2029693424
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2036486907}
-  - component: {fileID: 2036486908}
-  m_Layer: 0
-  m_Name: Mitral Valve Position
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2036486907
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2036486906}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1816053105}
-  m_RootOrder: 27
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2036486908
+  m_GameObject: {fileID: 2029693419}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &2029693425
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2036486906}
+  m_GameObject: {fileID: 2029693419}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e3e7e880685f2744ac64d266d305871, type: 3}
+  m_Script: {fileID: 11500000, guid: d5376eecb1945314c978bd92951655fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statename: Mitral Valve Position
-  Gobjs_turnon: []
-  _audioclip: 0
-  audioclip_starttime: 0
-  audioclip_endtime: 0
-  _Notasktodo: 0
-  DelayTime: 0
-  Events_on_start:
-    m_PersistentCalls:
-      m_Calls: []
-  Events_on_end:
-    m_PersistentCalls:
-      m_Calls: []
-  endstate: 0
+  DiaphragmEntered: 0
+  Time: 0
+  Waited: 0
+  MyMiniState: {fileID: 776122176}
+--- !u!65 &2029693426
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029693419}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 2.0000002, z: 1.0000004}
+  m_Center: {x: 0.000000059604645, y: -1.2434498e-14, z: -0.00000008940698}
 --- !u!1 &2042397064
 GameObject:
   m_ObjectHideFlags: 0
@@ -7631,7 +7648,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1816053105}
-  m_RootOrder: 11
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2055380159
 MonoBehaviour:
