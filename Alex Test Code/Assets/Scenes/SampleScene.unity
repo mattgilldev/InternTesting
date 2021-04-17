@@ -263,6 +263,21 @@ MonoBehaviour:
   Time: 0
   Waited: 0
   MyMiniState: {fileID: 590531404}
+  myNoiseSystem: {fileID: 545367564}
+  SpotCompletion:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 545367564}
+        m_MethodName: CompletionNoise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &16362280
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,6 +571,21 @@ MonoBehaviour:
   Time: 0
   Waited: 0
   MyMiniState: {fileID: 71015227}
+  myNoiseSystem: {fileID: 545367564}
+  SpotCompletion:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 545367564}
+        m_MethodName: CompletionNoise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &154832418 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 729d63727ce146c4298536719bc7759a,
@@ -902,6 +932,21 @@ MonoBehaviour:
   Time: 0
   Waited: 0
   MyMiniState: {fileID: 590531404}
+  myNoiseSystem: {fileID: 545367564}
+  SpotCompletion:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 545367564}
+        m_MethodName: CompletionNoise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &367218433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1237,6 +1282,179 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 222665418}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &532621941
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 532621942}
+  m_Layer: 0
+  m_Name: Completion Noise Parent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &532621942
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532621941}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.4214365, y: 1.0156542, z: -1.9044526}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 545367563}
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &545367562
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 545367563}
+  - component: {fileID: 545367565}
+  - component: {fileID: 545367564}
+  m_Layer: 0
+  m_Name: Completion Noise Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &545367563
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545367562}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 532621942}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &545367564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545367562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb88e75f87765b0489f4807fa1852a84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundEffectSource: {fileID: 545367565}
+  _completionnoise: {fileID: 8300000, guid: b37a726ab349a434686e332a8a14ddd1, type: 3}
+--- !u!82 &545367565
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545367562}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b37a726ab349a434686e332a8a14ddd1, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &546034336
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2330,6 +2548,21 @@ MonoBehaviour:
   Time: 0
   Waited: 0
   MyMiniState: {fileID: 590531404}
+  myNoiseSystem: {fileID: 545367564}
+  SpotCompletion:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 545367564}
+        m_MethodName: CompletionNoise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &804471389
 GameObject:
   m_ObjectHideFlags: 0
@@ -2640,6 +2873,21 @@ MonoBehaviour:
   Time: 0
   Waited: 0
   MyMiniState: {fileID: 71015227}
+  myNoiseSystem: {fileID: 545367564}
+  SpotCompletion:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 545367564}
+        m_MethodName: CompletionNoise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &869619156
 GameObject:
   m_ObjectHideFlags: 0
@@ -2781,6 +3029,21 @@ MonoBehaviour:
   Time: 0
   Waited: 0
   MyMiniState: {fileID: 71015227}
+  myNoiseSystem: {fileID: 545367564}
+  SpotCompletion:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 545367564}
+        m_MethodName: CompletionNoise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &899350392
 GameObject:
   m_ObjectHideFlags: 0
@@ -3058,6 +3321,21 @@ MonoBehaviour:
   Time: 0
   Waited: 0
   MyMiniState: {fileID: 776122176}
+  myNoiseSystem: {fileID: 545367564}
+  SpotCompletion:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 545367564}
+        m_MethodName: CompletionNoise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &936829327
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3157,7 +3435,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &963194226
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3365,6 +3643,21 @@ MonoBehaviour:
   Time: 0
   Waited: 0
   MyMiniState: {fileID: 590531404}
+  myNoiseSystem: {fileID: 545367564}
+  SpotCompletion:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 545367564}
+        m_MethodName: CompletionNoise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1064367330
 GameObject:
   m_ObjectHideFlags: 0
@@ -4197,6 +4490,21 @@ MonoBehaviour:
   Time: 0
   Waited: 0
   MyMiniState: {fileID: 71015227}
+  myNoiseSystem: {fileID: 545367564}
+  SpotCompletion:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 545367564}
+        m_MethodName: CompletionNoise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1328086363
 GameObject:
   m_ObjectHideFlags: 0
@@ -4432,7 +4740,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1354109552}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.499, y: 1.476, z: -0.83927464}
+  m_LocalPosition: {x: 0.593, y: 1.292, z: -0.784}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4699,6 +5007,21 @@ MonoBehaviour:
   Time: 0
   Waited: 0
   MyMiniState: {fileID: 776122176}
+  myNoiseSystem: {fileID: 545367564}
+  SpotCompletion:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 545367564}
+        m_MethodName: CompletionNoise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &1428735313
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4841,6 +5164,21 @@ MonoBehaviour:
   Time: 0
   Waited: 0
   MyMiniState: {fileID: 776122176}
+  myNoiseSystem: {fileID: 545367564}
+  SpotCompletion:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 545367564}
+        m_MethodName: CompletionNoise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &1432767632
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5087,6 +5425,21 @@ MonoBehaviour:
   Time: 0
   Waited: 0
   MyMiniState: {fileID: 71015227}
+  myNoiseSystem: {fileID: 545367564}
+  SpotCompletion:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 545367564}
+        m_MethodName: CompletionNoise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1514593581
 GameObject:
   m_ObjectHideFlags: 0
@@ -5216,6 +5569,21 @@ MonoBehaviour:
   Time: 0
   Waited: 0
   MyMiniState: {fileID: 776122176}
+  myNoiseSystem: {fileID: 545367564}
+  SpotCompletion:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 545367564}
+        m_MethodName: CompletionNoise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &1514593588
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5358,6 +5726,21 @@ MonoBehaviour:
   Time: 0
   Waited: 0
   MyMiniState: {fileID: 776122176}
+  myNoiseSystem: {fileID: 545367564}
+  SpotCompletion:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 545367564}
+        m_MethodName: CompletionNoise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &1534145353
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5671,6 +6054,21 @@ MonoBehaviour:
   Time: 0
   Waited: 0
   MyMiniState: {fileID: 590531404}
+  myNoiseSystem: {fileID: 545367564}
+  SpotCompletion:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 545367564}
+        m_MethodName: CompletionNoise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1636020469
 GameObject:
   m_ObjectHideFlags: 0
@@ -5880,6 +6278,21 @@ MonoBehaviour:
   Time: 0
   Waited: 0
   MyMiniState: {fileID: 776122176}
+  myNoiseSystem: {fileID: 545367564}
+  SpotCompletion:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 545367564}
+        m_MethodName: CompletionNoise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &1637758063
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6455,6 +6868,21 @@ MonoBehaviour:
   Time: 0
   Waited: 0
   MyMiniState: {fileID: 590531404}
+  myNoiseSystem: {fileID: 545367564}
+  SpotCompletion:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 545367564}
+        m_MethodName: CompletionNoise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1849374224
 GameObject:
   m_ObjectHideFlags: 0
@@ -6584,6 +7012,21 @@ MonoBehaviour:
   Time: 0
   Waited: 0
   MyMiniState: {fileID: 776122176}
+  myNoiseSystem: {fileID: 545367564}
+  SpotCompletion:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 545367564}
+        m_MethodName: CompletionNoise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &1849374231
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7514,6 +7957,21 @@ MonoBehaviour:
   Time: 0
   Waited: 0
   MyMiniState: {fileID: 776122176}
+  myNoiseSystem: {fileID: 545367564}
+  SpotCompletion:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 545367564}
+        m_MethodName: CompletionNoise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &2029693426
 BoxCollider:
   m_ObjectHideFlags: 0

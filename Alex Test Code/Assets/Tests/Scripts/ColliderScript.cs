@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ColliderScript : MonoBehaviour
 {
@@ -8,13 +9,16 @@ public class ColliderScript : MonoBehaviour
     public int Time = 0;
     public bool Waited = false;
     public MiniState MyMiniState;
+    public Noise myNoiseSystem;
+    public UnityEvent SpotCompletion;
+
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Diaphragm")
         {
             DiaphragmEntered = true;
-           StartCoroutine(CountToFive());
+            StartCoroutine(CountToFive());
             Time = 0;
         }
 
@@ -26,6 +30,7 @@ public class ColliderScript : MonoBehaviour
             Time += 1;
             Waited = false;
             StartCoroutine(CountToFive());
+           
         }
 
         if (Time == 5)
@@ -37,8 +42,10 @@ public class ColliderScript : MonoBehaviour
     public void OnTimeMet()
     {
         Debug.Log("Timer Complete");
+        SpotCompletion.Invoke();
         MyMiniState.IndexCount();
         this.gameObject.SetActive(false);
+
     }
 
     IEnumerator CountToFive()
