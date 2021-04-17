@@ -20,11 +20,18 @@ public class ColliderScript : MonoBehaviour
             DiaphragmEntered = true;
             StartCoroutine(CountToFive());
             Time = 0;
+            
         }
 
     }
+    private void Start()
+    {
+        MyMiniState.ListeningSpotIndicator();
+    }
     private void Update()
     {
+        
+
         if (Waited == true && Time < 5)
         {
             Time += 1;
@@ -39,14 +46,7 @@ public class ColliderScript : MonoBehaviour
         }
     }
 
-    public void OnTimeMet()
-    {
-        Debug.Log("Timer Complete");
-        SpotCompletion.Invoke();
-        MyMiniState.IndexCount();
-        this.gameObject.SetActive(false);
 
-    }
 
     IEnumerator CountToFive()
     {
@@ -54,6 +54,14 @@ public class ColliderScript : MonoBehaviour
         Waited = true; 
     }
 
+    public void OnTimeMet()
+    {
+        Debug.Log("Timer Complete");
+        SpotCompletion.Invoke();
+        MyMiniState.IndexCount();
+        //this.gameObject.SetActive(false);
+
+    }
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Diaphragm")

@@ -6,11 +6,21 @@ public class MiniState : MonoBehaviour
 {
     public StateClass MyState;
     public int ListenCount = 0;
+    public int SpotNumber = 0;
     public List<ColliderScript> ListenPoints = new List<ColliderScript>();
+
+
+    public void ListeningSpotIndicator()
+    {
+        ListenPoints[SpotNumber].gameObject.SetActive(true);
+        
+    }
     public void IndexCount()
     {
         ListenCount++;
         NextPoint(ListenCount);
+        ListenPoints[SpotNumber].gameObject.SetActive(false);
+        SpotNumber = SpotNumber + 1;
 
     }
 
