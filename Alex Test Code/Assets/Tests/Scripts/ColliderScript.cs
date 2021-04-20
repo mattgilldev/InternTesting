@@ -12,10 +12,10 @@ public class ColliderScript : MonoBehaviour
     public Noise myNoiseSystem;
     public UnityEvent SpotCompletion;
 
-    private void Start()
-       {
-        MyMiniState.SpotDisableSetup();
-       }
+    //private void Start()
+    //   {
+    //    MyMiniState.SpotDisableSetup();
+    //   }
    
 
     private void OnTriggerEnter(Collider other)

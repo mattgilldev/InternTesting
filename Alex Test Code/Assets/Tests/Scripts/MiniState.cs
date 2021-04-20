@@ -8,11 +8,20 @@ public class MiniState : MonoBehaviour
     public int ListenCount = 0;
     public List<ColliderScript> ListenPoints = new List<ColliderScript>();
 
-
-   public void SpotDisableSetup()
+    public void Start()
     {
-       for (int i=1; i<ListenPoints.Count;i++)
+        SpotDisableSetup();
+    }
+
+    public void SpotDisableSetup()
+    {
+       for (int i=0; i<ListenPoints.Count;i++)
        ListenPoints[i].gameObject.SetActive(false);
+    }
+
+    public void SpotFirstOn()
+    {
+        ListenPoints[0].gameObject.SetActive(true);
     }
 
     
