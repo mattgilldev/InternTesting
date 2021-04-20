@@ -12,6 +12,11 @@ public class ColliderScript : MonoBehaviour
     public Noise myNoiseSystem;
     public UnityEvent SpotCompletion;
 
+    private void Start()
+       {
+        MyMiniState.SpotDisableSetup();
+       }
+   
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,25 +24,17 @@ public class ColliderScript : MonoBehaviour
         {
             DiaphragmEntered = true;
             StartCoroutine(CountToFive());
-            Time = 0;
-            
+            Time = 0; 
         }
+    }
 
-    }
-    private void Start()
-    {
-        MyMiniState.ListeningSpotIndicator();
-    }
     private void Update()
     {
-        
-
         if (Waited == true && Time < 5)
         {
             Time += 1;
             Waited = false;
             StartCoroutine(CountToFive());
-           
         }
 
         if (Time == 5)
@@ -45,8 +42,6 @@ public class ColliderScript : MonoBehaviour
             OnTimeMet();
         }
     }
-
-
 
     IEnumerator CountToFive()
     {
@@ -58,8 +53,8 @@ public class ColliderScript : MonoBehaviour
     {
         Debug.Log("Timer Complete");
         SpotCompletion.Invoke();
+        this.gameObject.SetActive(false);
         MyMiniState.IndexCount();
-        //this.gameObject.SetActive(false);
 
     }
     private void OnTriggerExit(Collider other)
@@ -72,6 +67,5 @@ public class ColliderScript : MonoBehaviour
             Waited = false;
         }
     }
-
 
 }
