@@ -29,17 +29,21 @@ public class MiniState : MonoBehaviour
     {
         ListenCount++;
         NextPoint(ListenCount);
-        ListenPoints[ListenCount].gameObject.SetActive(true);
+        if (ListenCount < ListenPoints.Count)
+        {
+            ListenPoints[ListenCount].gameObject.SetActive(true);
+        }
+
     }
 
    public void NextPoint(int point)
     {
         
-       if (point <= ListenPoints.Count)
+       if (point < ListenPoints.Count)
        {
            ListenPoints[point].gameObject.SetActive(true);
        }
-      if (point > ListenPoints.Count)
+      if (point >= ListenPoints.Count)
        {
            Debug.Log("End of Listening to Sounds");
            MyState.EndThisState();
