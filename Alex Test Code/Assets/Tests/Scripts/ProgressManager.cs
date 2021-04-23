@@ -22,7 +22,7 @@ public class ProgressManager : MonoBehaviour
 
     private void Start()
     {
-        stateindex = 0;
+       stateindex = 0;
     }
 
     public void Update()
