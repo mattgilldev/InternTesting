@@ -8,9 +8,15 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Placement Color
+<<<<<<< HEAD
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ShaderKeywords: _ALPHAPREMULTIPLY_ON
   m_LightmapFlags: 4
+=======
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION
+  m_LightmapFlags: 2
+>>>>>>> 72836d470ba8bdf98e577f4cb0397747d29e8e25
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 3050
@@ -92,6 +98,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 0
     m_Colors:
+<<<<<<< HEAD
     - _BaseColor: {r: 1, g: 0.94920766, b: 0.15566039, a: 1}
     - _Color: {r: 1, g: 0.94920766, b: 0.15566039, a: 1}
     - _EmissionColor: {r: 1, g: 0.88235295, b: 0.31764707, a: 1}
@@ -109,3 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
+=======
+    - _Color: {r: 1, g: 0.94920766, b: 0.15566039, a: 0.36078432}
+    - _EmissionColor: {r: 0.4301988, g: 0.3806471, b: 0.13739333, a: 1}
+>>>>>>> 72836d470ba8bdf98e577f4cb0397747d29e8e25
