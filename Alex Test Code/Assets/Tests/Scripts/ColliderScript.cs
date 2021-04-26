@@ -13,7 +13,7 @@ public class ColliderScript : MonoBehaviour
     public Noise myNoiseSystem;
     public UnityEvent SpotCompletion;
     public GameObject Counter;
-   public TMP_InputField myTextField;
+   public TextMeshProUGUI myTextField;
     
 
 
@@ -30,9 +30,10 @@ public class ColliderScript : MonoBehaviour
         {
             DiaphragmEntered = true;
             Counter.SetActive(true);
-            StartCoroutine(CountToFive());
             Time = 0;
             myTextField.text = Time.ToString();
+            StartCoroutine(CountToFive());
+            
         }
     }
 
@@ -49,6 +50,7 @@ public class ColliderScript : MonoBehaviour
 
         if (Time == 5)
         {
+ 
             OnTimeMet();
         }
     }
@@ -56,8 +58,7 @@ public class ColliderScript : MonoBehaviour
     IEnumerator CountToFive()
     {
         yield return new WaitForSeconds(1);
-        Waited = true; 
-        
+        Waited = true;
     }
 
     public void OnTimeMet()
