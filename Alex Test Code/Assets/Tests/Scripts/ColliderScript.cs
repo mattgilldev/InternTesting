@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
 public class ColliderScript : MonoBehaviour
 {
@@ -11,11 +12,16 @@ public class ColliderScript : MonoBehaviour
     public MiniState MyMiniState;
     public Noise myNoiseSystem;
     public UnityEvent SpotCompletion;
+    public GameObject Counter;
+   public TMP_InputField myTextField;
+    
 
-    //private void Start()
-    //   {
-    //    MyMiniState.SpotDisableSetup();
-    //   }
+
+    private void Start()
+      {
+        //    MyMiniState.SpotDisableSetup();
+        Counter.SetActive(false);
+      }
    
 
     private void OnTriggerEnter(Collider other)
@@ -23,8 +29,10 @@ public class ColliderScript : MonoBehaviour
         if (other.tag == "Diaphragm")
         {
             DiaphragmEntered = true;
+            Counter.SetActive(true);
             StartCoroutine(CountToFive());
-            Time = 0; 
+            Time = 0;
+            myTextField.text = Time.ToString();
         }
     }
 
@@ -33,8 +41,10 @@ public class ColliderScript : MonoBehaviour
         if (Waited == true && Time < 5)
         {
             Time += 1;
+            myTextField.text = Time.ToString();
             Waited = false;
             StartCoroutine(CountToFive());
+            
         }
 
         if (Time == 5)
@@ -47,6 +57,7 @@ public class ColliderScript : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         Waited = true; 
+        
     }
 
     public void OnTimeMet()
@@ -54,6 +65,7 @@ public class ColliderScript : MonoBehaviour
         Debug.Log("Timer Complete");
         SpotCompletion.Invoke();
         this.gameObject.SetActive(false);
+        Counter.SetActive(false);
         MyMiniState.IndexCount();
 
     }
@@ -63,6 +75,7 @@ public class ColliderScript : MonoBehaviour
         {
             DiaphragmEntered = false;
             StopAllCoroutines();
+            Counter.SetActive(false);
             Time = 0;
             Waited = false;
         }
