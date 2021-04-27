@@ -15,6 +15,8 @@ public class ColliderScript : MonoBehaviour
     public UnityEvent SpotCompletion;
     public GameObject Counter;
     public TextMeshProUGUI myTextField;
+    // mytextfield.gameobject.setactive.false
+    // enable
     public int requiredtime = 6;
     Stopwatch myTimer;
     
@@ -25,6 +27,7 @@ public class ColliderScript : MonoBehaviour
         //    MyMiniState.SpotDisableSetup();
         Counter.SetActive(false);
         myTimer = new Stopwatch();
+        
 
       }
    
@@ -59,6 +62,7 @@ public class ColliderScript : MonoBehaviour
 
     public void OnTimeMet()
     {
+        myTextField.enabled = false;
         SpotCompletion.Invoke();
         this.gameObject.SetActive(false);
         Counter.SetActive(false);
