@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
+using System.Diagnostics;
+using System;
 
 public class ColliderScript : MonoBehaviour
 {
     public bool DiaphragmEntered = false;
     public int Time = 0;
-    public bool Waited = false;
     public MiniState MyMiniState;
     public Noise myNoiseSystem;
     public UnityEvent SpotCompletion;
     public GameObject Counter;
-   public TextMeshProUGUI myTextField;
+    public TextMeshProUGUI myTextField;
+    public int requiredtime = 6;
+    Stopwatch myTimer;
     
 
 
@@ -21,6 +24,8 @@ public class ColliderScript : MonoBehaviour
       {
         //    MyMiniState.SpotDisableSetup();
         Counter.SetActive(false);
+        myTimer = new Stopwatch();
+
       }
    
 
@@ -30,40 +35,30 @@ public class ColliderScript : MonoBehaviour
         {
             DiaphragmEntered = true;
             Counter.SetActive(true);
-            Time = 0;
-            myTextField.text = Time.ToString();
-            StartCoroutine(CountToFive());
-            
+            myTimer.Stop();
+            myTimer.Reset();
+            myTimer.Start();
+            myTextField.text = (Convert.ToInt32(myTimer.Elapsed.TotalSeconds)).ToString();
         }
     }
 
     private void Update()
     {
-        if (Waited == true && Time < 5)
+        if (Convert.ToInt32(myTimer.Elapsed.TotalSeconds) < 6)
         {
-            Time += 1;
-            myTextField.text = Time.ToString();
-            Waited = false;
-            StartCoroutine(CountToFive());
-            
+            myTextField.text = (Convert.ToInt32(myTimer.Elapsed.TotalSeconds)).ToString();
         }
-
-        if (Time == 5)
+        if (Convert.ToInt32(myTimer.Elapsed.TotalSeconds) >= 6)
         {
- 
+            myTextField.text = (Convert.ToInt32(myTimer.Elapsed.TotalSeconds)).ToString();
+            myTimer.Stop();
+            myTimer.Reset();
             OnTimeMet();
         }
     }
 
-    IEnumerator CountToFive()
-    {
-        yield return new WaitForSeconds(1);
-        Waited = true;
-    }
-
     public void OnTimeMet()
     {
-        Debug.Log("Timer Complete");
         SpotCompletion.Invoke();
         this.gameObject.SetActive(false);
         Counter.SetActive(false);
@@ -75,10 +70,9 @@ public class ColliderScript : MonoBehaviour
         if (other.tag == "Diaphragm")
         {
             DiaphragmEntered = false;
-            StopAllCoroutines();
             Counter.SetActive(false);
-            Time = 0;
-            Waited = false;
+            myTimer.Stop();
+            myTimer.Reset();
         }
     }
 
