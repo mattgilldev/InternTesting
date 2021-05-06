@@ -42,14 +42,7 @@ public class StateClass : MonoBehaviour
 
     public void Update()
     {
-        if (Application.isPlaying)
-        {
-            if (_audioclip && currentstateactive && !audioisplaying)
-            {
-                audioisplaying = true;
-                progressmang.PlayNarration();
-            }
-        }
+
     }
 
 
