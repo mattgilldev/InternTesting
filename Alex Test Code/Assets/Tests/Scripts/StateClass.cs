@@ -27,30 +27,35 @@ public class StateClass : MonoBehaviour
     public UnityEvent Events_on_start;
     [Tooltip("anything to trigger on end (completing the state)")]
     public UnityEvent Events_on_end;
+    public ProgressManager progressmang;
 
-
-    [Header("for testing only")]
+    [HideInInspector]
     public bool endstate = false;
+    public bool currentstateactive = false;
+    [HideInInspector]
+    public bool audioisplaying = false;
     //runs in edit mode to live update the name of the gameobject
     private void OnValidate()
     {
         statename = gameObject.name;
     }
 
+    public void Update()
+    {
+        if (Application.isPlaying)
+        {
+            if (_audioclip && currentstateactive && !audioisplaying)
+            {
+                audioisplaying = true;
+                progressmang.PlayNarration();
+            }
+        }
+    }
+
 
     public void EndThisState()
     {
         Events_on_end.Invoke();
-    }
-
-
-    private void Update()
-    {
-        if (endstate)
-        {
-            endstate = false;
-            EndThisState();
-        }
     }
 
 }

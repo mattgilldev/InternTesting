@@ -446,7 +446,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  progressmang: {fileID: 1394173710}
   endstate: 0
+  currentstateactive: 0
+  audioisplaying: 0
 --- !u!114 &71015227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2970,7 +2973,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  progressmang: {fileID: 1394173710}
   endstate: 0
+  currentstateactive: 0
+  audioisplaying: 0
 --- !u!114 &572109915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3078,7 +3084,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  progressmang: {fileID: 1394173710}
   endstate: 0
+  currentstateactive: 0
+  audioisplaying: 0
 --- !u!114 &590531404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4074,7 +4083,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  progressmang: {fileID: 1394173710}
   endstate: 0
+  currentstateactive: 0
+  audioisplaying: 0
 --- !u!114 &776122176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4671,7 +4683,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  progressmang: {fileID: 1394173710}
   endstate: 0
+  currentstateactive: 0
+  audioisplaying: 0
 --- !u!114 &804471392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5181,6 +5196,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 287f0ba25a51ea8479f26c97246e62fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &901639982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 901639983}
+  m_Layer: 0
+  m_Name: Audio Sources
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &901639983
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901639982}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1665938887}
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &917355983
 GameObject:
   m_ObjectHideFlags: 0
@@ -5579,7 +5625,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 1, z: 0.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6519,10 +6565,10 @@ MonoBehaviour:
   statename: Welcome State
   Gobjs_turnon:
   - {fileID: 1873671181}
-  _audioclip: 0
+  _audioclip: 1
   audioclip_starttime: 0
-  audioclip_endtime: 0
-  _Notasktodo: 0
+  audioclip_endtime: 47
+  _Notasktodo: 1
   DelayTime: 0
   Events_on_start:
     m_PersistentCalls:
@@ -6541,7 +6587,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  progressmang: {fileID: 1394173710}
   endstate: 0
+  currentstateactive: 0
+  audioisplaying: 0
 --- !u!114 &1130293886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7127,7 +7176,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  progressmang: {fileID: 1394173710}
   endstate: 0
+  currentstateactive: 0
+  audioisplaying: 0
 --- !u!114 &1328086366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7610,10 +7662,11 @@ MonoBehaviour:
   - {fileID: 572109914}
   currentState: {fileID: 0}
   lastState: {fileID: 0}
-  stateindex: 4
-  startexperience: 1
+  stateindex: 0
+  startexperience: 0
+  experiencestarted: 0
   numberofstates: 0
-  Narration: {fileID: 440490245}
+  Narration: {fileID: 1665938888}
   Soundeffects: {fileID: 0}
   audioplayed: 0
 --- !u!4 &1394173711
@@ -8961,7 +9014,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  progressmang: {fileID: 1394173710}
   endstate: 0
+  currentstateactive: 0
+  audioisplaying: 0
 --- !u!114 &1573510587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9385,7 +9441,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  progressmang: {fileID: 1394173710}
   endstate: 0
+  currentstateactive: 0
+  audioisplaying: 0
 --- !u!114 &1636020472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9726,7 +9785,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  progressmang: {fileID: 1394173710}
   endstate: 0
+  currentstateactive: 0
+  audioisplaying: 0
 --- !u!114 &1650333917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9744,6 +9806,133 @@ MonoBehaviour:
   ListenPoints: []
   Slides:
   - {fileID: 16362284}
+--- !u!1 &1665938886
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1665938887}
+  - component: {fileID: 1665938888}
+  m_Layer: 0
+  m_Name: Narration
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1665938887
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665938886}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 901639983}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1665938888
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665938886}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 7987abf2859511f4d9ae304d728e3aca, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1694097345
 GameObject:
   m_ObjectHideFlags: 0
@@ -9813,7 +10002,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  progressmang: {fileID: 1394173710}
   endstate: 0
+  currentstateactive: 0
+  audioisplaying: 0
 --- !u!114 &1694097348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10093,7 +10285,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  progressmang: {fileID: 1394173710}
   endstate: 0
+  currentstateactive: 0
+  audioisplaying: 0
 --- !u!114 &1772655714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12209,7 +12404,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  progressmang: {fileID: 1394173710}
   endstate: 0
+  currentstateactive: 0
+  audioisplaying: 0
 --- !u!114 &2055380160
 MonoBehaviour:
   m_ObjectHideFlags: 0

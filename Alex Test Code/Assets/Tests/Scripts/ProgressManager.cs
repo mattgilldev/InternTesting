@@ -13,6 +13,8 @@ public class ProgressManager : MonoBehaviour
     public int stateindex = 0;
 
     public bool startexperience = false;
+    [HideInInspector]
+    public bool experiencestarted = false;
 
     public int numberofstates = 0;
     [Header("Audio Systems")]
@@ -31,7 +33,13 @@ public class ProgressManager : MonoBehaviour
         if (startexperience)
         {
             startexperience = false;
+            experiencestarted = true;
             StartExperience();
+        }
+
+        if (Application.isPlaying && experiencestarted && currentState._audioclip)
+        {
+            CheckAudioTimeEnd();
         }
     }
 
@@ -72,6 +80,7 @@ public class ProgressManager : MonoBehaviour
 
     public void DeactivateLastState()
     {
+        currentState.currentstateactive = false;
         Debug.Log("Deactiving old things");
         foreach (GameObject thing in currentState.Gobjs_turnon)
         {
@@ -87,10 +96,16 @@ public class ProgressManager : MonoBehaviour
         {
             thing.SetActive(true);
         }
+
+        if (currentState._audioclip)
+        {
+            PlayNarration();
+        }
     }
 
     public void TriggerStartingEvents()
     {
+        currentState.currentstateactive = true;
         currentState.Events_on_start.Invoke();
     }
 
@@ -111,18 +126,29 @@ public class ProgressManager : MonoBehaviour
 
     public void PlayNarration()
     {
-        Narration.time = currentState.audioclip_starttime;
-        Narration.Play();
+        if (currentState._audioclip)
+        {
+            Debug.Log(currentState.gameObject.name + " is starting the audio");
+            Narration.time = currentState.audioclip_starttime;
+            Narration.Play();
+        }
     }
 
     public void CheckAudioTimeEnd()
     {
-        if (Narration.isPlaying)
+        if (currentState._audioclip)
         {
             if (Narration.time >= currentState.audioclip_endtime)
             {
+                Narration.Stop();
+                currentState.audioisplaying = false;
                 EndNarration();
             }
+        }
+
+        else
+        {
+            return;
         }
     }
 
@@ -131,6 +157,7 @@ public class ProgressManager : MonoBehaviour
         if (currentState._Notasktodo == false)
         {
             Debug.Log("Audio done... but waiting for event to trigger end of state");
+            return;
         }
 
         if (currentState._Notasktodo)
