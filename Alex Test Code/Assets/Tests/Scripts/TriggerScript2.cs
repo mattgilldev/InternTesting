@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerScript : MonoBehaviour
+public class TriggerScript2 : MonoBehaviour
 {
     public StateClass ColliderState;
-    private bool enter = false;
+    private bool enters = false;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" & enter == false)
+        if (other.tag == "Player" & enters == false)
         {
-            enter = true;
+            enters = true;
             this.gameObject.SetActive(false);
             ColliderState.EndThisState();
         }
+       
     }
 }
