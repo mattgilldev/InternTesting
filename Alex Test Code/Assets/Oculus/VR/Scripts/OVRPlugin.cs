@@ -43,7 +43,7 @@ public static class OVRPlugin
 #if OVRPLUGIN_UNSUPPORTED_PLATFORM
 	public static readonly System.Version wrapperVersion = _versionZero;
 #else
-	public static readonly System.Version wrapperVersion = OVRP_1_59_0.version;
+	public static readonly System.Version wrapperVersion = OVRP_1_57_0.version;
 #endif
 
 #if !OVRPLUGIN_UNSUPPORTED_PLATFORM
@@ -923,11 +923,7 @@ public static class OVRPlugin
 		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)]
 		public Rectf[] VisibleRect;
 		public Sizei MaxViewportSize;
-		public EyeTextureFormat DepthFormat;
-
-		public EyeTextureFormat MotionVectorFormat;
-		public EyeTextureFormat MotionVectorDepthFormat;
-		public Sizei MotionVectorTextureSize;
+		EyeTextureFormat DepthFormat;
 
 		public override string ToString()
 		{
@@ -1303,8 +1299,6 @@ public static class OVRPlugin
 		public byte[] EventData;
 	}
 
-
-/// Insight SDK type definitions
 
 	public static bool initialized
 	{
@@ -6278,17 +6272,6 @@ public static class OVRPlugin
 
 		[DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern Result ovrp_SetKeyboardOverlayUV(Vector2f uv);
-	}
-
-	private static class OVRP_1_58_0
-	{
-		public static readonly System.Version version = new System.Version(1, 58, 0);
-	}
-
-	private static class OVRP_1_59_0
-	{
-		public static readonly System.Version version = new System.Version(1, 59, 0);
-
 	}
 #endif // !OVRPLUGIN_UNSUPPORTED_PLATFORM
 }
